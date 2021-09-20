@@ -1,0 +1,5 @@
+INSERT INTO livre (titre, editeur, annee, isbn) VALUES ("Un Secret", "Hatier", 2004, "978-1111111111");
+
+INSERT INTO usager (nom, prenom, adresse, cp, ville, email, code_barre) VALUES ("CAILLEUX", "ORLANE", "16 Pl. des Reignaux", "59800", "Lille", "emailexemple@gmail.com", 111111111111111), ("KIM", "TAEHYUNG", "itaewon Séoul", "140-200", "Corée du Sud", "grosbgdecoree@bighit.com", 222222222222222)
+
+UPDATE livre SET colonne2 = "Jean Rostand Edition", colonne3 = "2021"
