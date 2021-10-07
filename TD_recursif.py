@@ -20,5 +20,3 @@ print(somme_iteratif(4))
 
 #Q2a/ L'algorithme le plus proche de la formule de definiton est recursif
 #Q2b/ L'avantage de la methode recursive est que c'est plus naturel/simple
-
-#Q3
