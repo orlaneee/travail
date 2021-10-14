@@ -31,3 +31,11 @@ def factorielle_recursif(n):
         return 1
     else:
         return n * (factorielle_recursif(n-1))
+
+    #Exercice 5
+#question 1
+def recursive(a,n):
+    if n == 0:
+        return 1
+    else:
+        return a * recursive(a,n-1)
