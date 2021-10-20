@@ -43,3 +43,21 @@ def Von_Koch(n,l):
         
         
 Von_Koch(3,100)
+
+def Von_Koch(n,l):
+    if n == 0:
+        return turtle.forward(l)
+    else:
+        Von_Koch(n - 1,l/3)
+        turtle.left(60)
+        Von_Koch(n - 1, l/3)
+        turtle.right(120)
+        Von_Koch(n - 1,l/3)
+        turtle.left(60)
+        Von_Koch(n - 1, l/3)
+        
+def flocon (n, l):
+    for i in range(3):
+        Von_Koch(n,l)
+        right(120)
+print(flocon(4,200))
