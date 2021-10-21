@@ -61,3 +61,25 @@ def flocon (n, l):
         Von_Koch(n,l)
         right(120)
 print(flocon(4,200))
+
+#Exo3 fractale
+import math
+from turtle import circle, forward, right, left, bye, pendown, penup, pendown, goto, speed
+
+#carré simple
+def carre(l):
+    for i in range(4):
+        forward(l)
+        right(90)
+
+def carre2(t,n):
+    if n == 0:
+        return None
+    else:
+        carre(t)
+        forward(t/2)
+        right(45)
+        carre2(math.sqrt((t/2)**2+ (t/2)**2),n-1)
+        
+carre2(100,3)
+
