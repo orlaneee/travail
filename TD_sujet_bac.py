@@ -1,3 +1,4 @@
+#Sujet3 exo 1
 def multiplication(n1,n2):
     if n1 >= 0 and n2 >= 0:
         resultat = 0
