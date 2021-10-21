@@ -65,3 +65,17 @@ def recursive(a,n):
         return 1
     else:
         return a * recursive(a,n-1)
+
+    #Exo6
+
+#25 % 7
+
+#Question2
+
+def euclidienne(a,b):
+    """permet de calculer le reste de la division euclidienne"""
+    if b == 0:
+        return a
+    else:
+        r = a % b
+        return euclidienne(b,r)
