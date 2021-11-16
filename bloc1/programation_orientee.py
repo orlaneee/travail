@@ -1,20 +1,20 @@
-# class CompteBancaire:
-#     def __init__(self,numero,titulaire,solde):
-#         self.solde = solde
-#         self.numero = numero
-#         self.titulaire = titulaire
-#         
-#     def deposer_argent(saelf, valeur):
-#         self.solde = self.solde + valeur
-#         return self.solde
-#     def retirer_argent (self, valeur):
-#         self.solde = self.solde - valeur
-#         if self.solde < valeur:
-#             return "Vous ne pouvez pas effectuer cette transaction"
-#         else:
-#             return self.solde
-#         
-# un_compte = CompteBancaire(12345, "Alice", 0)
+class CompteBancaire:
+    def __init__(self,numero,titulaire,solde):
+        self.solde = solde
+        self.numero = numero
+        self.titulaire = titulaire
+        
+    def deposer_argent(saelf, valeur):
+        self.solde = self.solde + valeur
+        return self.solde
+    def retirer_argent (self, valeur):
+        self.solde = self.solde - valeur
+        if self.solde < valeur:
+            return "Vous ne pouvez pas effectuer cette transaction"
+        else:
+            return self.solde
+        
+un_compte = CompteBancaire(12345, "Alice", 0)
 
 #Exercice 1
 
