@@ -104,3 +104,10 @@ def appartient(v, t, i):
     
 ma_liste = ['foo','bar','spam','ham','eggs']
 print(appartient('spam', ma_liste, 3))
+
+#Exercice9
+def est_palindrome(str):
+    if ...:
+        return True
+    else:
+        return False
