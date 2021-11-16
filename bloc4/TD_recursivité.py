@@ -106,9 +106,19 @@ ma_liste = ['foo','bar','spam','ham','eggs']
 print(appartient('spam', ma_liste, 3))
 
 #Exercice9
-def est_palindrome(str):
-    if ...:
+def est_palindrome(chaine):
+    while len(chaine) > 0:
+        if chaine[0] == chaine[-1]:
+            chaine = chaine[1:-1]
+        else:
+            return False
+    return True
+
+ def est_palindrome(chaine):
+    if len(chaine) == 0:
         return True
+    elif chaine[0] == chaine[-1]:
+        return est_palindrome(chaine[1:-1])
     else:
         return False
     
