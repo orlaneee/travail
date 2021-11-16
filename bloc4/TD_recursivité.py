@@ -111,3 +111,9 @@ def est_palindrome(str):
         return True
     else:
         return False
+    
+#Exercice10
+#Q1 Les fonctions trucs et bidul sont des récursives croisées car truc elles fonctionne ensemble, truc appel bidul et vice-versa
+#Q2c) oui.
+#Q3 truc = paire et bidul = impair
+#Q4 truc et bidul sont terminales.
