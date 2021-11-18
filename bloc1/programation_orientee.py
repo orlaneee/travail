@@ -35,3 +35,51 @@ def compare(eleve1,eleve2):
 PA = Eleve("Ngondji","tg",20)
 Nathan = Eleve("Depaepe","tg",15)
 Orlane = Eleve("Cailleux","tg",15)
+
+#Exercice3
+
+import random
+class Personnage:
+
+    def __init__(self, nom, points_de_vie,apt_combat):
+        self.nom = nom
+        self.vie = points_de_vie
+        self.aptitude_combat = self.__limiter_aptitude_combat(apt_combat)
+        
+    def perd_vie(self):
+        if random.random() < 0.5:
+            nbPoint = 1
+        else:
+            nbPoint = 2
+
+        self.vie = self.vie - nbPoint
+        return nbPoint
+    def __limiter_aptitude_combat(self, degat):
+        if degat > 4:
+            return 4
+        else:
+            return degat
+        
+def game(j1,j2):
+    
+    while j1.vie > 0 and j2.vie > 0:
+        perte1 = j1.perd_vie()
+        print(j1.nom + " perd "+ str(perte1) + " point de vie")
+        perte2 = j2.perd_vie()
+        print(j2.nom + " perd "+ str(perte2) + " point de vie")
+
+    if j1.vie <= 0 and j2.vie > 0:
+        msg = j2.nom + " est vainqueur, il lui reste encore " + str(j2.vie) + " points alors que " + j1.nom + " est mort"
+    elif j2.vie <= 0 and j1.vie > 0:
+        msg = j1.nom + " est vainqueur, il lui reste encore " + str(j1.vie) + " points alors que " + j2.nom + " est mort"
+    else:
+        msg = "Les deux combattants sont morts en même temps"
+
+    return msg
+
+bilbo = Personnage("Bilbo", 20, 4)
+gollum = Personnage("Gollum", 20, 3)
+frodon = Personnage("Frondo", 20, 6)
+araignee = Personnage("Araignée", 10, 2)
+aragorn = Personnage("Aragorn", 30, 7)
+orc = Personnage("Orc", 10, 2)
