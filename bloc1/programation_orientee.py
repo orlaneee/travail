@@ -83,3 +83,45 @@ frodon = Personnage("Frondo", 20, 6)
 araignee = Personnage("Araignée", 10, 2)
 aragorn = Personnage("Aragorn", 30, 7)
 orc = Personnage("Orc", 10, 2)
+
+import math
+class Point:
+    def __init__(self,point,coor):
+        self.point1 = point[0]
+        self.point2 = coor[1]
+    
+    def __repr__(self):
+        return "(" + str(self.point1) + "," + str(self.point2) + ")"
+    
+
+#Exo5
+
+class Fraction:
+    def __init__(self,num,denom):
+        self.num = num / self.__euclidienne(num, denom)
+        self.denom = denom / self.__euclidienne(num,denom)
+        
+    def __repr__(self):
+        return str(self.num) + "/" + str(self.denom)
+        
+    def __eq__(self,frac2):
+        return self.num / self.denom == frac2.num / frac2.denom
+    
+    def __lt__(self,frac2):
+        return self.num / self.denom < frac2.num / frac2.denom
+    
+    def __mul__(self,frac2):
+        res = Fraction(self.num * frac2.num, self.denom * frac2.denom)
+        return res
+    
+    def __add__(self, frac2):
+        res = Fraction(self.num * frac2.denom + frac2.num * self.denom, self.denom * frac2.denom)
+        return res
+    
+    def __euclidienne(self, a,b):
+        """permet de calculer le reste de la division euclidienne"""
+        if b == 0:
+            return a
+        else:
+            r = a % b
+            return self.__euclidienne(b,r)
