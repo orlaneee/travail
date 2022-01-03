@@ -1,26 +1,26 @@
-##TP_sac_à_dos
-##listeObjets = [[7,12],[4,11],[3,8],[3,10]]
-##
-##def cle_tri(objet):
-##    return objet[0]/objet[1]
-##
-##listeObjetsTriee= sorted(listeObjets, key = cle_tri, reverse = True)
-##
-##
-##p = 0
-##sac = []
-##for obj in listeObjetsTriee : #obj = liste
-##    if p + obj[1] <= 30:
-##        sac.append(obj)
-##        p = p + obj[1]
-##        
-##objet = listeObjetsTriee[0]     
-##while p + objet[1] <= 30:
-##    sac = sac + [objet]
-##    p = p + objet[1]
-##    objet = listeObjetsTriee[1]
+TP_sac_à_dos
+listeObjets = [[7,12],[4,11],[3,8],[3,10]]
 
-##TP_rendu_monnaie
+def cle_tri(objet):
+    return objet[0]/objet[1]
+
+listeObjetsTriee= sorted(listeObjets, key = cle_tri, reverse = True)
+
+
+p = 0
+sac = []
+for obj in listeObjetsTriee : #obj = liste
+    if p + obj[1] <= 30:
+        sac.append(obj)
+        p = p + obj[1]
+        
+objet = listeObjetsTriee[0]     
+while p + objet[1] <= 30:
+    sac = sac + [objet]
+    p = p + objet[1]
+    objet = listeObjetsTriee[1]
+
+#TP_rendu_monnaie
 systeme_pieces = [200, 100, 50, 20, 10, 5, 2, 1]
 def rendu_monnaie(cent, systeme_pieces):
     '''
