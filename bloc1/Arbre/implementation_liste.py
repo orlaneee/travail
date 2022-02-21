@@ -235,6 +235,6 @@ if __name__ == '__main__':
     
     # Creation d'un peigne droit de hauteur 3
         # A compléter
-    
+   
     # PARTIE 2 - Question 4 
     # A compléter
