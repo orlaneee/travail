@@ -33,6 +33,7 @@ def est_vide(arbre):
         return True
     else :
         return False #return arbre == []
+    
 def est_feuille(arbre):
     '''
     DOCUMENTATION :
@@ -84,11 +85,19 @@ def SAG(arbre):
     précondition : A compléter
     
     TESTS :
+    >>> SAG(arbre_cours)
+    [8, [6, [], []]
+    
+    >>> SAG(arbre_vide)
+    "Il n'y a pas de sous-arbre gauche"
+    
+    >>> SAG(arbre_feuille)
+    [1, [], []]
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-    assert ..., " " # A compléter
+    assert est_vide(arbre) == False, "l'arbre est vide donc il n'y a pas de sous-arbre gauche" # A compléter
     # Code de la fonction à compléter
-    return SAG
+    return arbre[1]
 
 def SAD(arbre):
     '''
@@ -99,10 +108,19 @@ def SAD(arbre):
     précondition : A compléter
     
     TESTS :
+    >>> SAD(arbre_cours)
+    [1, [7, [], []], []]
+    
+    >>> SAD(arbre_vide)
+    "Il n'y a pas de sous-arbre droit"
+    
+    >>> SAD(arbre_feuille)
+    [1, [], []]
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail) 
-    assert ..., " " # A compléter
+    assert est_vide(arbre) == False, "Il n'y a pas de sous-arbre droit" # A compléter
     # Code de la fonction à compléter
+    return arbre[2]
 
 def taille(arbre):
     '''
@@ -112,8 +130,20 @@ def taille(arbre):
     return (int) : Taille de l'arbre
     
     TESTS :
+    >>> taille(arbre_cours)
+    6
+    >>> taille(arbre_vide)
+    0
+    >>> taille(arbre_feuille)
+    1
     '''
     # A compléter
+    if est_vide(arbre):
+        return 0
+    elif est_feuille(arbre):
+        return 1
+    else:
+        return 1 + taille(SAG) + taille(SAD) 
 
 def hauteur(arbre):
     '''
@@ -124,8 +154,20 @@ def hauteur(arbre):
     return (int) : Hauteur de l'arbre
     
     TESTS :
+    >>> taille(arbre_cours)
+    3
+    >>> taille(arbre_vide)
+    0
+    >>> taille(arbre_feuille)
+    0
     '''
     # A compléter
+    if est_vide(arbre):
+        return -1
+    elif est_feuille(arbre):
+        return 0
+    else:
+        return 1 + max(hauteur(SAG), hauteur(SAD))
 
 def cree_arbre_complet(h, maxi):
     '''
@@ -137,6 +179,7 @@ def cree_arbre_complet(h, maxi):
     return (list) : arbre créé
     '''
     # A compléter
+    
 
 def cree_peigne_gauche(h, maxi):
     '''
@@ -169,8 +212,13 @@ def est_egal(arbre1, arbre2):
     return (bool) : True si les deux arbres sont identiques, False sinon 
     
     TESTS :
+    >>> est_egal([21, [17,[15], [27]], [30, [11], [3]]], [21, [17,[15], [27]], [30, [13], [3]]])
+    False
+    >>> est_egal([21, [17,[15], [27]], [30, [11], [3]]], [21, [17,[15], [27]], [30, [11], [3]]])
+    True
     '''
     # A compléter
+    return arbre1 == arbre2
 
 if __name__ == '__main__':
     # Lancement des tests (laisser ces deux lignes de code inchangées)
